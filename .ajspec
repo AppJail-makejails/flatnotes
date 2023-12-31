@@ -1,0 +1,16 @@
+tags+: 13.2
+13.2.arch: amd64
+13.2.name: "flatnotes"
+13.2.timestamp.amd64: 1703996771
+13.2.sum.amd64: 1785d5e5159a6cb3327ca44be99e3a7c4701984fda07d0f94ee8962ad05f385f
+13.2.size.amd64: 236437745
+13.2.source.amd64: "http://appjail.hpc.at/flatnotes/13.2-amd64-image.appjail"
+13.2.source.amd64+: "https://images.all101bsd.download/flatnotes/13.2-amd64-image.appjail"
+tags+: 14.0
+14.0.arch: amd64
+14.0.name: "flatnotes"
+14.0.timestamp.amd64: 1704000449
+14.0.sum.amd64: 4e14f0b379c06bf907e13d1553316e59bfba32c174f05bbbd6b6703c3a96b578
+14.0.size.amd64: 235981255
+14.0.source.amd64: "http://appjail.hpc.at/flatnotes/14.0-amd64-image.appjail"
+14.0.source.amd64+: "https://images.all101bsd.download/flatnotes/14.0-amd64-image.appjail"
