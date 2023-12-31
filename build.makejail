@@ -1,0 +1,46 @@
+INCLUDE options/options.makejail
+INCLUDE options/volumes.makejail
+
+ARG flatnotes_fetch_builder=flatnotesFb
+ARG flatnotes_frontend_builder=flatnotesfb
+ARG flatnotes_options
+
+CMD echo "======> Creating fetch builder ... <======"
+EXEC --before-include "${flatnotes_options}" \
+     --file fetch-builder.makejail \
+     --name "${flatnotes_fetch_builder}"
+
+CMD echo "======> Creating frontend builder ... <======"
+EXEC --before-include "${flatnotes_options}" \
+     --file frontend-builder.makejail \
+     --name "${flatnotes_frontend_builder}" \
+     --arg "fetch_builder=${flatnotes_fetch_builder}"
+
+CMD echo "======> Installing dependencies (backend) ... <======"
+PKG python py39-pipenv rust
+
+INCLUDE create-user.makejail
+
+WORKDIR /flatnotes/src
+
+CMD echo "======> Installing flatnotes (backend) ... <======"
+RAW for f in LICENSE Pipfile Pipfile.lock; do
+	COPY --verbose --jail "${flatnotes_fetch_builder}" /src/${f} .
+RAW done
+RUN pipenv install --deploy --ignore-pipfile --system
+
+COPY --verbose --jail "${flatnotes_fetch_builder}" /src/flatnotes .
+COPY --verbose --jail "${flatnotes_frontend_builder}" /build/flatnotes/dist flatnotes
+
+CMD echo "======> Fixing owner & group ... <======"
+CMD chown -vR flatnotes:flatnotes /flatnotes
+
+CMD echo "======> Destroying fetch builder ... <======"
+DESTROY --force "${flatnotes_fetch_builder}"
+
+CMD echo "======> Destroying frontend builder ... <======"
+DESTROY --force "${flatnotes_frontend_builder}"
+
+CMD echo "======> Uninstalling rust ... <======"
+PKG --remove rust
+PKG --autoremove

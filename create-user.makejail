@@ -1,0 +1,4 @@
+CMD echo "======> Creating user 'flatnotes' ... <======"
+CMD pw useradd -n flatnotes -d /flatnotes
+CMD mkdir /flatnotes
+CMD chown flatnotes:flatnotes /flatnotes

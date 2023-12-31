@@ -1,0 +1,18 @@
+INCLUDE options/options.makejail
+
+ARG fetch_builder=flatnotesFb
+
+CMD echo "======> Installing dependencies (frontend) ... <======"
+PKG npm
+
+WORKDIR /build
+
+CMD echo "======> Installing flatnotes (frontend) ... <======"
+RAW for f in package.json package-lock.json .htmlnanorc; do
+	COPY --jail "${fetch_builder}" /src/${f} .
+RAW done
+RUN npm ci
+
+RUN mkdir -p flatnotes
+COPY --jail "${fetch_builder}" /src/flatnotes/src ./flatnotes
+RUN npm run build

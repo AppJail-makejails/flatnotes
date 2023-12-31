@@ -1,0 +1,1 @@
+OPTION volume=flatnotes-data mountpoint:/flatnotes/data owner:1001 group:1001
