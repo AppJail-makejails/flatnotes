@@ -17,7 +17,7 @@ EXEC --before-include "${flatnotes_options}" \
      --arg "fetch_builder=${flatnotes_fetch_builder}"
 
 CMD echo "======> Installing dependencies (backend) ... <======"
-PKG python py39-pipenv rust
+PKG python py311-pipenv rust
 
 INCLUDE create-user.makejail
 
