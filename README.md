@@ -58,7 +58,7 @@ volumes:
 
 ### Arguments (stage: build):
 
-* `flatnotes_tag` (default: `13.3`): See [#tags](#tags).
+* `flatnotes_tag` (default: `13.4`): See [#tags](#tags).
 
 ### Check current status
 
@@ -86,5 +86,5 @@ appjail run -s flatnotes_log flatnotes
 
 | Tag    | Arch    | Version        | Type   |
 | ------ | ------- | -------------- | ------ |
-| `13.3` | `amd64` | `13.3-RELEASE` | `thin` |
+| `13.4` | `amd64` | `13.4-RELEASE` | `thin` |
 | `14.1` | `amd64` | `14.1-RELEASE` | `thin` |
