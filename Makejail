@@ -14,9 +14,7 @@ WORKDIR /flatnotes/src
 ENV FLATNOTES_PATH=/flatnotes/data
 
 RUN daemon \
-        -r \
         -t "Database-less note taking web app" \
-        -P /flatnotes/.master.pid \
         -p /flatnotes/.pid \
         -o /flatnotes/flatnotes.log \
             python -m \
