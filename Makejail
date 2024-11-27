@@ -1,8 +1,11 @@
 INCLUDE options/options.makejail
+INCLUDE options/healthcheckers.makejail
 
 ARG flatnotes_tag=13.4
 
 FROM --entrypoint gh+AppJail-makejails/flatnotes flatnotes:${flatnotes_tag}
+
+COPY healthcheckers
 
 STOP
 
