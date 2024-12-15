@@ -1,0 +1,9 @@
+ARG flatnotes_version=%%VERSION%%
+
+CMD mkdir -p /src
+
+CMD echo "======> Downloading flatnotes (src) ... <======"
+CMD fetch -o /tmp/flatenotes.tar.gz https://github.com/dullage/flatnotes/archive/refs/tags/v${flatnotes_version}.tar.gz
+
+CMD echo "======> Installing flatnotes (src) ... <======"
+CMD tar -C /src --strip-components=1 -xvf /tmp/flatenotes.tar.gz
