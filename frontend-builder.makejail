@@ -1,4 +1,5 @@
 INCLUDE options/options.makejail
+INCLUDE resizewin-fix.makejail
 
 ARG fetch_builder=flatnotesFb
 
@@ -8,9 +9,6 @@ PKG npm
 WORKDIR /build
 
 CMD echo "======> Installing flatnotes (frontend) ... <======"
-# workaround to avoid resizewin(1) from being suspended.
-CMD sed -i '' -Ee '/resizewin/d' /root/.login
-CMD sed -i '' -Ee '/resizewin/d' /root/.profile
 RAW for f in package.json package-lock.json .htmlnanorc; do
 	COPY --jail "${fetch_builder}" /src/${f} .
 RAW done

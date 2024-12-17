@@ -1,5 +1,6 @@
 INCLUDE options/options.makejail
 INCLUDE options/volumes.makejail
+INCLUDE resizewin-fix.makejail
 
 ARG flatnotes_fetch_builder=flatnotesFb
 ARG flatnotes_frontend_builder=flatnotesfb
