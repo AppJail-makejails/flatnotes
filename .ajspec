@@ -1,16 +1,17 @@
 tags+: 13.5
 13.5.arch: amd64
 13.5.name: "flatnotes"
-13.5.timestamp.amd64: 1742301077
-13.5.sum.amd64: 8d976cbdfa914d456d7a9443c0a8bb5d4bc2a34e0d250452c116f87a26cf4a0f
-13.5.size.amd64: 251530310
-13.5.source.amd64: "http://appjail.hpc.at/flatnotes/13.5-amd64-image.appjail"
-13.5.source.amd64+: "https://images.all101bsd.download/flatnotes/13.5-amd64-image.appjail"
+13.5.timestamp.amd64: 1744171502
+13.5.sum.amd64: c66dcc54447dae8fabd92a9278ba2a2a48f6d1ce5a163c4a89a3baeca8d9991f
+13.5.size.amd64: 251770991
+13.5.source.amd64: "https://images.all101bsd.download/flatnotes/13.5-amd64-image.appjail"
+13.5.source.amd64+: "http://appjail.hpc.at/flatnotes/13.5-amd64-image.appjail"
 tags+: 14.2
 14.2.arch: amd64
 14.2.name: "flatnotes"
-14.2.timestamp.amd64: 1742304044
-14.2.sum.amd64: 7ccc39ef8d525fc6061f156344ff69551efb2ff93b82cb126ea484d8244e1c73
-14.2.size.amd64: 251047783
-14.2.source.amd64: "http://appjail.hpc.at/flatnotes/14.2-amd64-image.appjail"
-14.2.source.amd64+: "https://images.all101bsd.download/flatnotes/14.2-amd64-image.appjail"
+14.2.timestamp.amd64: 1744173130
+14.2.sum.amd64: 7f2eb2b8d1bf8267e7e3242a287e0607e6ebd501536401bac28c6ee25f71405f
+14.2.size.amd64: 249857323
+14.2.source.amd64: "https://images.all101bsd.download/flatnotes/14.2-amd64-image.appjail"
+14.2.source.amd64+: "http://appjail.hpc.at/flatnotes/14.2-amd64-image.appjail"
+maintenance: "This image is uploading, please wait a moment and try again. If you are importing this image using a Makejail that has the '--<name>_ajspec' argument, you can use the 'reproduce' method to use 'appjail-reproduce'. See 'appjail-image(5)' for details."
