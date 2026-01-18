@@ -58,7 +58,7 @@ volumes:
 
 ### Arguments (stage: build):
 
-* `flatnotes_tag` (default: `13.5`): See [#tags](#tags).
+* `flatnotes_tag` (default: `14.3`): See [#tags](#tags).
 * `flatnotes_ajspec` (default: `gh+AppJail-makejails/flatnotes`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ### Check current status
@@ -100,5 +100,5 @@ appjail run -s flatnotes_log flatnotes
 
 | Tag        | Arch    | Version            | Type   | `flatnotes_version` |
 | ---------- | ------- | ------------------ | ------ | ------------------- |
-| `13.5` | `amd64` | `13.5-RELEASE` | `thin` | `3.6.1`       |
 | `14.3` | `amd64` | `14.3-RELEASE` | `thin` | `3.6.1`       |
+| `15` | `amd64` | `15` | `thin` | `3.6.1`       |
