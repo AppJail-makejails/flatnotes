@@ -100,5 +100,5 @@ appjail run -s flatnotes_log flatnotes
 
 | Tag        | Arch    | Version            | Type   | `flatnotes_version` |
 | ---------- | ------- | ------------------ | ------ | ------------------- |
-| `14.3` | `amd64` | `14.3-RELEASE` | `thin` | `3.6.1`       |
-| `15` | `amd64` | `15` | `thin` | `3.6.1`       |
+| `14.3` | `amd64` | `14.3-RELEASE` | `thin` | `5.5.4`       |
+| `15` | `amd64` | `15` | `thin` | `5.5.4`       |

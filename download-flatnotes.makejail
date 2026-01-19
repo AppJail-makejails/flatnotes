@@ -1,4 +1,4 @@
-ARG flatnotes_version=3.6.1
+ARG flatnotes_version=5.5.4
 
 CMD mkdir -p /src
 
