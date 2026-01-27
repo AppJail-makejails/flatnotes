@@ -1,2 +1,0 @@
-INCLUDE options/options.makejail
-INCLUDE download-flatnotes.makejail

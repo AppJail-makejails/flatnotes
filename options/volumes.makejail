@@ -1,1 +1,1 @@
-OPTION volume=flatnotes-data mountpoint:/flatnotes/data owner:1001 group:1001
+OPTION volume=flatnotes-data mountpoint:/var/db/flatnotes owner:80 group:80 perm:750

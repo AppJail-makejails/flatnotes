@@ -7,37 +7,10 @@ ARG flatnotes_ajspec=gh+AppJail-makejails/flatnotes
 FROM --entrypoint "${flatnotes_ajspec}" flatnotes:${flatnotes_tag}
 
 COPY healthcheckers
+COPY scripts
 
 STOP
 
 STAGE start
 
-USER flatnotes
-WORKDIR /flatnotes/src
-
-ENV FLATNOTES_PATH=/flatnotes/data
-
-RUN daemon \
-        -t "Database-less note taking web app" \
-        -p /flatnotes/.pid \
-        -o /flatnotes/flatnotes.log \
-            python -m \
-                  uvicorn \
-                  main:app \
-                  --app-dir flatnotes \
-                  --host 0.0.0.0 \
-                  --port 8080 \
-                  --proxy-headers \
-                  --forwarded-allow-ips '*'
-
-STAGE custom:flatnotes_status
-
-CMD if [ -f "/flatnotes/.pid" ]; then \
-        top -ap `head -1 /flatnotes/.pid`; \
-    fi
-
-STAGE custom:flatnotes_log
-
-CMD if [ -f "/flatnotes/flatnotes.log" ]; then \
-        less -R /flatnotes/flatnotes.log; \
-    fi
+RUN /scripts/entrypoint.sh
