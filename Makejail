@@ -1,16 +1,5 @@
-INCLUDE options/options.makejail
-INCLUDE options/healthcheckers.makejail
+ARG flatnotes_from=ghcr.io/appjail-makejails/flatnotes
+ARG flatnotes_tag=latest
 
-ARG flatnotes_tag=14.3
-ARG flatnotes_ajspec=gh+AppJail-makejails/flatnotes
-
-FROM --entrypoint "${flatnotes_ajspec}" flatnotes:${flatnotes_tag}
-
-COPY healthcheckers
-COPY scripts
-
-STOP
-
-STAGE start
-
-RUN /scripts/entrypoint.sh
+OPTION overwrite=force
+OPTION from=${flatnotes_from}:${flatnotes_tag}
