@@ -23,7 +23,7 @@ flatnotes_command="${python_cmd} -m \
                   --forwarded-allow-ips '*'"
 
 echo Setting file permissions...
-chown -R noroot:noroot ${FLATNOTES_PATH} ${APP_PATH}
+change_owner ${FLATNOTES_PATH} ${APP_PATH}
 
 echo Starting flatnotes as user ${PUID}...
 exec su-exec noroot ${flatnotes_command}
