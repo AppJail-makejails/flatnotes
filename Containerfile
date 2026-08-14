@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.title="Flatnotes" \
 RUN set -xe; \
     \
     pkg update; \
-    pkg install -U py${PYVER}-flatnotes; \
+    pkg install py${PYVER}-flatnotes; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
